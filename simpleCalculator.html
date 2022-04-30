@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(0, 128, 122);
+    }
+    form{
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.651);
+        box-shadow: 0px 1px 5px rgb(112, 112, 112);
+    }
+    form > div{
+        margin-bottom: 10px;
+    }
+    form h2{
+        margin-bottom: 10px;
+    }
+    form input{
+        padding: 0.5rem;
+        border: none;
+        outline: none;
+    }
+    form input[type="number"]{
+        box-shadow: 0px 1px 5px rgb(112, 112, 112);
+    }
+    form input[type="button"]{
+        background-color: rgb(49, 49, 49);
+        color: white;
+    }
+    form input[type="button"]:hover{
+        background-color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+    h2,h1{
+        text-align: center;
+    }
+    h1{
+        color: red;
+    }
+</style>
+<body>
+    <!-- Mathematical operations on two Numbers -->
+    <form action="" class="mathOperation">
+        <h2>Simple Calculator</h2>
+        <div>
+            Num 1 : <input type="number" id="num1">
+        </div>
+        <div>
+            Num 2 : <input type="number" id="num2">
+        </div>
+        <div class="operators">
+            <input type="button" value="mulitply" onclick="multiply()">
+            <input type="button" value="add" onclick="add()">
+            <input type="button" value="subtract" onclick="subtract()">
+            <input type="button" value="divide" onclick="divide()">
+        </div>
+        <h1 id="result" name="result" >0</h1>
+    </form>
+    <script>
+
+        var result = document.getElementById("result");
+        function add(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            result.innerHTML = parseInt(num1) + parseInt(num2);
+        }
+        function subtract(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            result.innerHTML = num1 - num2;
+        }
+        function multiply(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            result.innerHTML = num1 * num2;
+        }
+        function divide(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            result.innerHTML = num1 / num2;
+        }
+    </script>
+</body>
+</html>
